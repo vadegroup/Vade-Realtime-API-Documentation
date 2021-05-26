@@ -60,7 +60,7 @@ To obtain your key please contact us at team@vadepark.com
                         35.778177839
                     ]
                 },
-                "timeUpdated": "2021-05-20T21:39:59.531676Z",
+                "lastUpdated": "2021-05-20T21:39:59.531676Z",
                 "occupied": true,
                 "rawScore": 0.9609332672620956,
                 "occpuancyThreshold": 0.8
@@ -77,7 +77,7 @@ To obtain your key please contact us at team@vadepark.com
                         35.776427443
                     ]
                 },
-                "timeUpdated": "2021-05-20T21:42:44.408191Z",
+                "lastUpdated": "2021-05-20T21:42:44.408191Z",
                 "occupied": false,
                 "rawScore": 0.2862340956795516,
                 "occpuancyThreshold": 0.8
@@ -103,6 +103,7 @@ To obtain your key please contact us at team@vadepark.com
   _returns a list of parking spaces and their current occupancy state within a municipality defined zone._
 
 **URL**
+
 
 	 https://realtime.beta.inf.vadenet.org/v1/zones/3512668c-540f-41dc-903f-6625dc3362e8
 
@@ -133,7 +134,7 @@ To obtain your key please contact us at team@vadepark.com
                         35.778177839
                     ]
                 },
-                "timeUpdated": "2021-05-20T21:39:59.531676Z",
+                "lastUpdated": "2021-05-20T21:39:59.531676Z",
                 "occupied": true,
                 "rawScore": 0.9609332672620956,
                 "occpuancyThreshold": 0.8
@@ -150,7 +151,7 @@ To obtain your key please contact us at team@vadepark.com
                         35.776427443
                     ]
                 },
-                "timeUpdated": "2021-05-20T21:42:44.408191Z",
+                "lastUpdated": "2021-05-20T21:42:44.408191Z",
                 "occupied": false,
                 "rawScore": 0.2862340956795516,
                 "occpuancyThreshold": 0.8
@@ -209,7 +210,7 @@ To obtain your key please contact us at team@vadepark.com
         "occupied": false,
         "rawScore": 0.3412363710685651,
         "occupancyThreshold": 0.8,
-        "timeUpdated": "2021-04-14T13:56:01Z",
+        "lastUpdated": "2021-04-14T13:56:01Z",
         "vehicleDetails": {
             "typeOptions": [
                 {
