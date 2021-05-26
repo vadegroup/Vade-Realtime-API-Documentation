@@ -60,7 +60,7 @@ To obtain your key please contact us at team@vadepark.com
                         35.778177839
                     ]
                 },
-                "lastUpdated": "2021-05-20T21:39:59.531676Z",
+                "timeUpdated": "2021-05-20T21:39:59.531676Z",
                 "occupied": true,
                 "rawScore": 0.9609332672620956,
                 "occpuancyThreshold": 0.8
@@ -77,7 +77,7 @@ To obtain your key please contact us at team@vadepark.com
                         35.776427443
                     ]
                 },
-                "lastUpdated": "2021-05-20T21:42:44.408191Z",
+                "timeUpdated": "2021-05-20T21:42:44.408191Z",
                 "occupied": false,
                 "rawScore": 0.2862340956795516,
                 "occpuancyThreshold": 0.8
@@ -133,7 +133,7 @@ To obtain your key please contact us at team@vadepark.com
                         35.778177839
                     ]
                 },
-                "lastUpdated": "2021-05-20T21:39:59.531676Z",
+                "timeUpdated": "2021-05-20T21:39:59.531676Z",
                 "occupied": true,
                 "rawScore": 0.9609332672620956,
                 "occpuancyThreshold": 0.8
@@ -150,7 +150,7 @@ To obtain your key please contact us at team@vadepark.com
                         35.776427443
                     ]
                 },
-                "lastUpdated": "2021-05-20T21:42:44.408191Z",
+                "timeUpdated": "2021-05-20T21:42:44.408191Z",
                 "occupied": false,
                 "rawScore": 0.2862340956795516,
                 "occpuancyThreshold": 0.8
