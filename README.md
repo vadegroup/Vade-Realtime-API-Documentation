@@ -47,54 +47,56 @@ To obtain your key please contact us at team@vadepark.com
     **Content:** 
     ```json
     {
-        "spots": [
-            {
-                "uuid": "9950f9dc-8a0e-41c6-93da-68189a2e727f",
-                "zone": "N/A",
-                "name": "parksight-60-spot-3",
-                "mdid": "N/A",
-                "location": {
-                    "type": "Point",
-                    "coordinates": [
-                        -78.637818729,
-                        35.778177839
-                    ]
-                },
-                "lastUpdated": "2021-05-20T21:39:59.531676Z",
-                "occupied": true,
-                "rawScore": 0.9609332672620956,
-                "occpuancyThreshold": 0.8
-            },
-            {
-                "uuid": "cb6466c0-fd3f-4de3-926b-3e40c7b25123",
-                "zone": "3512668c-540f-41dc-903f-6625dc3362e8",
-                "name": "parksight-66-0",
-                "mdid": "hillsboro-st/pauge-st:1",
-                "location": {
-                    "type": "Point",
-                    "coordinates": [
-                        -78.637428866,
-                        35.776427443
-                    ]
-                },
-                "lastUpdated": "2021-05-20T21:42:44.408191Z",
-                "occupied": false,
-                "rawScore": 0.2862340956795516,
-                "occpuancyThreshold": 0.8
-            },
-        ],
-        "query": {
-            "latitude": -78.685396,
-            "longitude": 35.779223,
-            "distance": 10000,
-            "pageNumber": 1,
-            "pageSize": 50,
-            "self": "/v1/geo?distance=10000&latitude=-78.685396&longitude=35.779223&pageNumber=1&pageSize=50"
+      "spots":[
+        {
+           "uuid":"a8efdb0d-aj4s-4a9e-8e0c-6b72ff0c585b",
+           "zone":"7434aecd-jska-4608-b097-8f0c3bc9e9bc",
+           "name":"UC-Davis-ADA-2-8",
+           "mdid":"N/A",
+           "type":"standard",
+           "location":{
+              "type":"Point",
+              "coordinates":[
+                 -121.756550153,
+                 38.54262097
+              ]
+           },
+           "lastUpdated":"2021-12a-22T17:50:56Z",
+           "occupied":false,
+           "rawScore":0,
+           "occpuancyThreshold":0.6
         },
-        "numSpots": 2,
-        "spotsReporting": 2,
-        "spotsOccupied": 1,
-        "lastUpdated": "2021-05-20T21:42:44.408191Z"
+        {
+           "uuid":"781f649d-82hs-4968-a6b8-f9b6d721f6e7",
+           "zone":"f816698f-jska-4d75-ba4a-2ac9636ad688",
+           "name":"FDOT_BAKER_EB_4R-Spot-20",
+           "mdid":"N/A",
+           "type":"curbspace",
+           "location":{
+              "type":"Point",
+              "coordinates":[
+                 -82.401195184,
+                 30.253478619
+              ]
+           },
+           "lastUpdated":"2021-12-05T21:21:59Z",
+           "occupied":true,
+           "occpuancyThreshold":0.5,
+           "curbspaceVehicleCount":1
+        },
+      ],
+       "query":{
+          "latitude":-121.75,
+          "longitude":38.54,
+          "distance":10000,
+          "pageNumber":1,
+          "pageSize":1000,
+          "self":"/v1/geo?distance=10000&latitude=-121.75&longitude=38.54"
+       },
+       "numSpots":34,
+       "spotsReporting":34,
+       "spotsOccupied":5,
+       "lastUpdated":"2021-12-05T00:02:34Z"
     }
 
 
@@ -122,23 +124,7 @@ To obtain your key please contact us at team@vadepark.com
     ```json
     {
         "spots": [
-            {
-                "uuid": "9950f9dc-8a0e-41c6-93da-68189a2e727f",
-                "zone": "N/A",
-                "name": "parksight-60-spot-3",
-                "mdid": "N/A",
-                "location": {
-                    "type": "Point",
-                    "coordinates": [
-                        -78.637818729,
-                        35.778177839
-                    ]
-                },
-                "lastUpdated": "2021-05-20T21:39:59.531676Z",
-                "occupied": true,
-                "rawScore": 0.9609332672620956,
-                "occpuancyThreshold": 0.8
-            },
+            ,
             {
                 "uuid": "cb6466c0-fd3f-4de3-926b-3e40c7b25123",
                 "zone": "3512668c-540f-41dc-903f-6625dc3362e8",
@@ -228,6 +214,50 @@ To obtain your key please contact us at team@vadepark.com
             ]
         }
     }
+    
+
+**Spot Data Types** 
+----
+  _We use 2 data structures to represent parking spaces_
+
+- **Standard**
+
+A standard parking space fits the normal description of what most people would consider a parking space - a single stall for a vehicle.
+
+```json
+{
+   "uuid": str - A unique identifer for the spot in the Vade database,
+   "zone": str - A unique identifier for the specific zone this spot is linked to,
+   "name": str - The easy to read name of the parking space,
+   "mdid": str - A municipality defined identifier,
+   "type": str - ("standard") The type of parking space this is 
+   "location": dict - A Geojson object to represent the location of this parking space (Point),
+   "lastUpdated": str - A UTC timestamp to show when the occupancy of this space was last updated,
+   "occupied": bool - Whether or not the parking space is occupied,
+   "rawScore": float - the confidence that a vehicle is in the parking space,
+   "occpuancyThreshold": float - the minimum confidence level for this space to be considered occupied
+}
+```
+
+- **Curbspace**
+
+A curbspace parking spot represents a stretch of curb where multiple vehicles are parked. 
+
+```json
+{
+  "uuid": str - A unique identifer for the spot in the Vade database,
+  "zone": str - A unique identifier for the specific zone this spot is linked to,
+  "name": str - The easy to read name of the parking space,
+  "mdid": str - A municipality defined identifier,
+  "type": str - ("curbspace") The type of parking space this is 
+  "location": dict - A Geojson object to represent the location of this parking space (Point),
+  "lastUpdated": str - A UTC timestamp to show when the occupancy of this space was last updated,
+  "occupied": bool - Whether or not the parking space is occupied,
+  "occpuancyThreshold": float - A property used by the vade backend,
+  "curbspaceVehicleCount": int - How many vehicles are currently parked in this section of curb
+}
+```
+
 
 We Have Libraries!
 ---
